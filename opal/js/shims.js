@@ -20,13 +20,19 @@ $(document).ready(function() {
 			$.ajax({
 				url: $script.attr('src'),
 				success: function( s ){
-					src[idx] = s;
-					waiting--;
-					if( waiting === 0 ){ $(document).trigger('runruby'); }
+					//src[idx] = s;
+					//waiting--;
+					//if( waiting === 0 ){ $(document).trigger('runruby'); }
+					$('body').append('<pre>'+s+'</pre>');
+					Opal.eval( s );
 				}
 			});
 		} else {
-			src[idx] = $script.text();
+			//src[idx] = $script.text();
+			var s;
+			s = $script.text();
+			$('body').append('<pre>'+s+'</pre>');
+			Opal.eval( s );
 		}
 	});
 
