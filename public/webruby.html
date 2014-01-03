@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)file:///Users/pixie/Desktop/dnd.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ruby.js</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body style="">
+      	<div id="foo" class="drag" draggable="true"></div>
+    		<div id="bar1" class="target before_animation"></div>
+    		<div id="bar2" class="target"></div>
+
+        <script type="application/javascript" src="js/jquery.min.js"></script>
+        <script type="application/javascript" src="js/webruby.js"></script>
+        <script type="application/javascript" src="js/webruby_shims.js"></script>
+
+
+
+        <script type="application/ruby" src="ruby/webruby_shims.rb"></script>
+        <script type="application/ruby" src="ruby/test.rb"></script>
+
+        <script type="application/ruby">
+        	jQuery('body').append('<p>This is inserted using a script tag with content.</p>')
+        </script>
+
+        <script type="application/ruby">
+          s = "This is inserted using a script tag with content using $ instead of jQuery."
+        	$('body').append('<p>'+s+'</p>')
+        	h = {}
+        	h[:test] = 'Yay!'
+        	$('body').append("<p>#{h}</p>")
+        </script>
+
+</body></html>
