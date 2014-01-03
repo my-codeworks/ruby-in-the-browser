@@ -28,11 +28,11 @@ So no full replacement of Javascript any time soon then? Well, nearly. There are
 
 The traditional approach here is to use LLVM/Clang to compile the Ruby source to LLVM bytecode and convert that to Javascript.
 
-Currently we have the full (almost) port of Ruby 1.8.7 that Replit did (https://github.com/replit/emscripted-ruby). But that is 2 years old at the time of writing and never mind 1.9.x we have 2.1 comming any day so it's a bit dated.
+Currently we have the full (almost) port of Ruby 1.8.7 that Replit did (https://github.com/replit/emscripted-ruby). But that is 2 years old at the time of writing and never mind 1.9.x we have 2.1 coming any day so it's a bit dated.
 
 Enter the work that Matz(tm) is doing with mRuby and the similar convertion of that through LLVM/Clang called Webruby (https://github.com/xxuejie/webruby).
 
-That project is updated and activly worked on and compatible with a large part of the Ruby ISO standard.
+That project is updated and actively worked on and compatible with a large part of the Ruby ISO standard.
 
 You can look at that code under the `webruby` directory.
 
@@ -42,9 +42,9 @@ You can look at that code under the `webruby` directory.
 
 This is where Opal (http://opaljs.org) comes in. This is a two part project that consists of a Ruby parser/converter and a Javascript runtime for that.
 
-Basically it takes Ruby source code and transforms it to Javascript, making a few assuptions along the way.
+Basically it takes Ruby source code and transforms it to Javascript, making a few assumptions along the way.
 
-These assuptions are then delivered by the Opal Ruby runtime that is basically reimplementing Ruby core and stdlib in Javascript.
+These assumptions are then delivered by the Opal Ruby runtime that is basically reimplementing Ruby core and stdlib in Javascript.
 
 You'll the Opal test code in the `opal` directory.
 
@@ -72,6 +72,6 @@ I'll add more tests and play around a bit more with real website programming and
 
 # Help
 
-Do you know of any other way of running Ruby in the browser without any binary dependancies? Fork nad add code for it as well or just open an issue and I'll add it as soon as possible.
+Do you know of any other way of running Ruby in the browser without any binary dependencies? Fork and add code for it as well or just open an issue and I'll add it as soon as possible.
 
 Many thanks for your time and I hope you enjoy the simple demos I have put together to show what you can do with Ruby in the browser!
