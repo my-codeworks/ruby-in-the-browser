@@ -23,15 +23,20 @@ $(document).ready(function() {
 					//src[idx] = s;
 					//waiting--;
 					//if( waiting === 0 ){ $(document).trigger('runruby'); }
-					$('body').append('<pre>'+s+'</pre>');
+					var el;
+					el = $('<pre></pre>');
+					el.text( s );
+					$('body').append( el );
 					Opal.eval( s );
 				}
 			});
 		} else {
 			//src[idx] = $script.text();
-			var s;
+			var s,el;
 			s = $script.text();
-			$('body').append('<pre>'+s+'</pre>');
+			el = $('<pre></pre>');
+			el.text( s );
+			$('body').append( el );
 			Opal.eval( s );
 		}
 	});
