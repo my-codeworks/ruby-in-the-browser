@@ -1,9 +1,9 @@
 function opal_run( src ){
 	var el;
 	el = $('<pre></pre>');
-	el.text( s );
+	el.text( src );
 	$('body').append( el );
-	Opal.eval( s );
+	Opal.eval( src );
 	$('body').append( '<hr/>' );
 }
 
