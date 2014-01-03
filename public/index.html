@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ruby.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+   <body>
+		<article>
+			<h1>Ruby in the browser</h1>
+
+			<p>This is a collection of demos of what you can currently do in the area of using ruby as the scripting language of the browser. As a replacement, kinda, of javascript if you will.</p>
+
+			<p>This is an area where a lot of people have done a lot of work over the years and one where we will probably end up having binary modules for our browsers to run whatever scripting language we want in the end.</p>
+
+			<p>Sadly that's still a long ways off and here is what you can do for now:</p>
+
+			<h2>What you really want (but can only use for embedded applications)</h2>
+
+			<p>What we really want is to use Ruby just like we use Javascript today and you can. Head over to <a href="http://trydecaf.org/">trydecaf.org/</a> and enjoy the bliss!</p>
+
+			<p>But since this requires you to download another browser it's only really viable when you deliver your product as a desktop app ...</p>
+
+			<p>There are also some work on building a native code extension for Chrome of the Ruby runtime. I have not seen it available in any other form than code, so I haven't tried it. It's a bit better than Decaf if it get's into the app store, it means you can use it for backend type apps without much problem.</p>
+
+			<h2>What we got so far (and it's pretty awesome!)</h2>
+
+			<p>So no full replacement of Javascript any time soon then? Well, nearly. There are two other approaches to this problem:</p>
+
+			<h3>Ruby VM in Javascript</h3>
+
+			<p>The traditional approach here is to use LLVM/Clang to compile the Ruby source to LLVM bytecode and convert that to Javascript.</p>
+
+			<p>Currently we have the full (almost) port of Ruby 1.8.7 that Replit did (<a href="https://github.com/replit/emscripted-ruby">replit/emscripted-ruby</a>). But that is 2 years old at the time of writing and never mind 1.9.x we have 2.1 coming any day so it's a bit dated.</p>
+
+			<p>Enter the work that Matz(tm) is doing with mRuby and the similar convertion of that through LLVM/Clang called Webruby (<a href="https://github.com/xxuejie/webruby">xxuejie/webruby</a>).</p>
+
+			<p>That project is updated and actively worked on and compatible with a large part of the Ruby ISO standard.</p>
+
+			<p>You can look at that code under the <code>webruby</code> directory.</p>
+
+			<h3>Ruby runtime implemented in Javascript</h3>
+
+			<p>This is where Opal (<a href="http://opaljs.org">opaljs.org</a>) comes in. This is a two part project that consists of a Ruby parser/converter and a Javascript runtime for that.</p>
+
+			<p>Basically it takes Ruby source code and transforms it to Javascript, making a few assumptions along the way.</p>
+
+			<p>These assumptions are then delivered by the Opal Ruby runtime that is basically reimplementing Ruby core and stdlib in Javascript.</p>
+
+			<p>You'll the Opal test code in the <code>opal</code> directory.</p>
+
+			<h2>Face off</h2>
+
+			<p>Well, it depends...</p>
+
+			<p>Webruby is larger (but not by a huge factor) and slower (it's a full VM on top of another VM) but supports ISO Ruby better.</p>
+
+			<p>Opal is a bit smaller and a lot faster. It also integrates better with Javascript (see the opal-jquery plugin) but it isn't really Ruby, it's close but not quite.</p>
+
+			<p>What do I mean? Well it uses Javascripts data types to it's using <code>Boolean</code> instead of <code>TrueClass</code>/<code>FalseClass</code> and throws around a bit of <code>null</code> and <code>undefined</code> at times.</p>
+
+			<p>That said it's close enough and probably easier to live with in a mixed Ruby/Javascript project, like most are bound to be.</p>
+
+			<h2>After ever after</h2>
+
+			<p>I'll add more tests and play around a bit more with real website programming and we'll see what wins out in the end...</p>
+
+			<h1>Help</h1>
+
+			<p>Do you know of any other way of running Ruby in the browser without any binary dependencies? Fork and add code for it as well or just open an issue and I'll add it as soon as possible.</p>
+
+			<p>Many thanks for your time and I hope you enjoy the simple demos I have put together to show what you can do with Ruby in the browser!</p>
+		</article>
+	</body>
+</html>
