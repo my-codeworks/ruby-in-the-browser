@@ -1,43 +1,25 @@
+function opal_run( src ){
+	var el;
+	el = $('<pre></pre>');
+	el.text( s );
+	$('body').append( el );
+	Opal.eval( s );
+	$('body').append( '<hr/>' );
+}
+
 $(document).ready(function() {
-
-	var src, waiting;
-
-	src = [];
-	waiting = 0;
-
-	$(document).on('runruby', function(){
-		src = src.join("\n");
-		src = src.replace( /\$\(/g, 'jQuery(' );
-
-		Opal.eval( src );
-	});
 
 	$('script[type="application/ruby"]').each(function( idx, script ){
 		$script = $(script);
 		if( $script.attr('src') ){
-			waiting++;
-			src[idx] = null;
 			$.ajax({
 				url: $script.attr('src'),
-				success: function( s ){
-					//src[idx] = s;
-					//waiting--;
-					//if( waiting === 0 ){ $(document).trigger('runruby'); }
-					var el;
-					el = $('<pre></pre>');
-					el.text( s );
-					$('body').append( el );
-					Opal.eval( s );
-				}
+				success: opal_run
 			});
 		} else {
-			//src[idx] = $script.text();
-			var s,el;
+			var s;
 			s = $script.text();
-			el = $('<pre></pre>');
-			el.text( s );
-			$('body').append( el );
-			Opal.eval( s );
+			opal_run( s );
 		}
 	});
 
