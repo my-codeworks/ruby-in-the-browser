@@ -1,9 +1,15 @@
 function opal_run( src ){
 	var el;
+
+	src = src.replace(/^\s+/gm, '');
+	src = src.replace(/\$\(/g,'jQuery(');
+
 	el = $('<pre></pre>');
 	el.text( src );
 	$('body').append( el );
+
 	Opal.eval( src );
+
 	$('body').append( '<hr/>' );
 }
 
