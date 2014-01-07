@@ -1,0 +1,80 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: url('/img/bkg.png');
+  font-family: 'Questrial';
+  font-size: 145%;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Pacifico';
+}
+
+h1 > span, h2 > span, h3 > span, h4 > span {
+  display: block;
+  font-size: 60%;
+}
+
+h1.hero {
+  font-size: 250%;
+  text-align: center;
+  color: #f68d20;
+  text-shadow: 3px  3px 0 rgba(170, 170, 170, 0.5),
+               0    5px 0 rgba(136, 136, 136, 0.5),
+              -3px  3px 0 rgba(153, 153, 153, 0.5),
+              -3px -3px 0 rgba(221, 221, 221, 0.5),
+               0   -5px 0 rgba(255, 255, 255, 0.5),
+               3px -3px 0 rgba(238, 238, 238, 0.5);
+}
+
+a {
+  color: #f68d20;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+article {
+  width: 800px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  border: 5px solid #D6CD79;
+  position: relative;
+  margin: 0 auto 10% auto;
+  padding: 2em 5%;
+  background: #fffbd8;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: -moz-radial-gradient(center, ellipse cover, rgba(255, 251, 216, 0) 0%, rgba(255, 251, 216, 0) 40%, #DFD9A6 100%);
+  background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255, 251, 216, 0)), color-stop(40%,rgba(255, 251, 216, 0)), color-stop(100%,#DFD9A6));
+  background-image: -webkit-radial-gradient(center, ellipse cover, rgba(255, 251, 216, 0) 0%, rgba(255, 251, 216, 0) 40%, #DFD9A6 100%);
+  background-image: -o-radial-gradient(center, ellipse cover, rgba(255, 251, 216, 0) 0%, rgba(255, 251, 216, 0) 40%,#DFD9A6 100%);
+  background-image: -ms-radial-gradient(center, ellipse cover, rgba(255, 251, 216, 0) 0%, rgba(255, 251, 216, 0) 40%,#DFD9A6 100%);
+  background-image: radial-gradient(ellipse at center, rgba(255, 251, 216, 0) 0%, rgba(255, 251, 216, 0) 40%,#DFD9A6 100%);
+  -webkit-box-shadow: 0 0 150px black;
+  -moz-box-shadow: 0 0 150px black;
+  box-shadow: 0 0 150px black;
+}
+
+article hr {
+  border: 0;
+  border-bottom: 5px solid rgba(214, 205, 121, 0.5);
+  width: 118%;
+  margin-left: -9%;
+}
+
+article pre {
+  overflow: scroll;
+}
+
+article pre > code {
+  font-family: "Source Code Pro", monospace;
+  font-size: 12pt;
+  border-radius: 3px;
+  padding: 8px 16px;
+  overflow: overlay;
+}
