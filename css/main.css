@@ -67,14 +67,10 @@ article hr {
   margin-left: -9%;
 }
 
-article pre {
-  overflow: scroll;
-}
-
 article pre > code {
   font-family: "Source Code Pro", monospace;
   font-size: 12pt;
   border-radius: 3px;
   padding: 8px 16px;
-  overflow: overlay;
+  overflow-wrap: break-word;
 }
