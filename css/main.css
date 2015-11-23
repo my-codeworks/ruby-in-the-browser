@@ -45,7 +45,7 @@ article {
   border: 5px solid #D6CD79;
   position: relative;
   margin: 0 auto 10% auto;
-  padding: 2em 5%;
+  padding: 2em;
   background: #fffbd8;
   background-position: center center;
   background-repeat: no-repeat;
@@ -63,8 +63,8 @@ article {
 article hr {
   border: 0;
   border-bottom: 5px solid rgba(214, 205, 121, 0.5);
-  width: 118%;
-  margin-left: -9%;
+  width: calc( 100% + 2em );
+  margin-left: -4em;
 }
 
 article pre > code {
