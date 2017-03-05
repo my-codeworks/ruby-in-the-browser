@@ -63,8 +63,19 @@ article {
 article hr {
   border: 0;
   border-bottom: 5px solid rgba(214, 205, 121, 0.5);
-  width: calc( 100% + 2em );
-  margin-left: -4em;
+  width: calc( 100% + 4em );
+  margin-left: -2em;
+}
+
+article p {
+  line-height: 1.4;
+}
+
+article p code {
+  background: #232323;
+  padding: .1em .3em;
+  border-radius: 3px;
+  color: #E6E1DC;
 }
 
 article pre > code {
@@ -73,6 +84,7 @@ article pre > code {
   border-radius: 3px;
   padding: 8px 16px;
   overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .edit {
