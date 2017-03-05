@@ -10,8 +10,8 @@
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <link href="/ruby-in-the-browser/css/main.css" rel="stylesheet" type="text/css">
-    <link href="/ruby-in-the-browser/css/highlight.css" rel="stylesheet" type="text/css">
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/css/highlight.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <h1 class="hero">opalrb.org</h1>
@@ -23,13 +23,13 @@
       <p>A small script, <code>js/loader.js</code>, to read in any script tags on the page with type <code>application/ruby</code>. Another small shim, <code>js/shims.js</code>, normalizes the way the libraries execute ruby code. The source is pre processed to replace any <code>$(</code> to <code>jQuery(</code>, to keep the formatting consistent with the javascript syntax.</p>
       <p>The scripts are read in and printed into a <code>pre &gt; code</code> block and then evaluated and the result printed below.</p>
     </article>
-		<script type="application/javascript" src="/ruby-in-the-browser/js/jquery.min.js"></script>
-    <script type="application/javascript" src="/ruby-in-the-browser/js/highlight.js"></script>
-    <script type="application/javascript" src="/ruby-in-the-browser/js/loader.js"></script>
-		<script type="application/javascript" src="/ruby-in-the-browser/opal/js/opal.js"></script>
-		<script type="application/javascript" src="/ruby-in-the-browser/opal/js/opal-jquery.js"></script>
-		<script type="application/javascript" src="/ruby-in-the-browser/opal/js/opal-parser.js"></script>
-		<script type="application/javascript" src="/ruby-in-the-browser/opal/js/shims.js"></script>
+		<script type="application/javascript" src="/js/jquery.min.js"></script>
+    <script type="application/javascript" src="/js/highlight.js"></script>
+    <script type="application/javascript" src="/js/loader.js"></script>
+		<script type="application/javascript" src="/opal/js/opal.js"></script>
+		<script type="application/javascript" src="/opal/js/opal-jquery.js"></script>
+		<script type="application/javascript" src="/opal/js/opal-parser.js"></script>
+		<script type="application/javascript" src="/opal/js/shims.js"></script>
 
     <script type="application/ruby">
       def jQuery( selector )
@@ -37,7 +37,7 @@
       end
     </script>
 
-    <script type="application/ruby" src="/ruby-in-the-browser/rb/test.rb"></script>
+    <script type="application/ruby" src="/rb/test.rb"></script>
 
     <script type="application/ruby">
       jQuery('article').append('<p>This is inserted using a script tag with content.</p>')
