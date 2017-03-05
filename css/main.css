@@ -74,3 +74,32 @@ article pre > code {
   padding: 8px 16px;
   overflow-wrap: break-word;
 }
+
+.edit {
+  position: relative;
+  left: -2em;
+  padding: 2em 2em .5em 2em;
+  background: rgba(81,52,23,.3);
+  width: 100%;
+}
+
+.edit::before {
+  content: '';
+  background: transparent;
+  width: 100%;
+  position: absolute;
+  left: -1.9em;
+  top: -.5em;
+  border: 30px solid #513417;
+  border-right: 20px solid #513417;
+  border-left-color: transparent;
+  max-height: 0px;
+}
+
+.edit::after {
+  content: 'Edit';
+  color: orange;
+  position: absolute;
+  top: 0;
+  padding: .3em 0;
+}

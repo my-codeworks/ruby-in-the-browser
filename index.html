@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
   </head>
    <body>
    	<h1 class="hero">Ruby.js</h1>
@@ -28,11 +28,11 @@
 
 			<h2>What you really want<span>(but can only use for embedded applications)</span></h2>
 
-			<p>What we really want is to use Ruby just like we use Javascript today and you can. Head over to <a href="http://trydecaf.org/">trydecaf.org/</a> and enjoy the bliss!</p>
+			<p>What we really want is to use Ruby just like we use Javascript today and you can. Head over to <a href="http://trydecaf.org/">trydecaf.org/</a> and enjoy the bliss! Or check out <a href="https://github.com/timahoney/decaf">the Github project</a>.</p>
 
 			<p>But since this requires you to download another browser it's only really viable when you deliver your product as a desktop app ...</p>
 
-			<p>There are also some work on building a native code extension for Chrome of the Ruby runtime. I have not seen it available in any other form than code, so I haven't tried it. It's a bit better than Decaf if it get's into the app store, it means you can use it for backend type apps without much problem.</p>
+			<p>There are also some work on building a native code extension for Chrome of the Ruby runtime. I have not seen it available in any other form <a href="https://github.com/ruby/ruby/commit/76bc2d1ed7f13fb329c33f48756ea3c24c59a6ea">than code</a>, so I haven't tried it. It's a bit better than Decaf if it get's into the app store, it means you can use it for backend type apps without much problem.</p>
 
 			<h2>What we got so far<span>(and it's pretty awesome!)</span></h2>
 
@@ -42,11 +42,11 @@
 
 			<p>The traditional approach here is to use LLVM/Clang to compile the Ruby source to LLVM bytecode and convert that to Javascript.</p>
 
-			<p>Currently we have the full (almost) port of Ruby 1.8.7 that Replit did (<a href="https://github.com/replit/emscripted-ruby">replit/emscripted-ruby</a>). But that is 2 years old at the time of writing and never mind 1.9.x we have 2.1 coming any day so it's a bit dated.</p>
+			<p>Currently we have the full (almost) port of Ruby 1.8.7 that Replit did (<a href="https://github.com/replit/emscripted-ruby">replit/emscripted-ruby</a>). But that is 5 years old at the time of writing (early 2017) and never mind 1.9.x we have 2.4 now and 2.5 coming so it is seriously dated.</p>
 
 			<p>Enter the work that Matz(tm) is doing with mRuby and the similar convertion of that through LLVM/Clang called Webruby (<a href="https://github.com/xxuejie/webruby">xxuejie/webruby</a>).</p>
 
-			<p>That project is updated and actively worked on and compatible with a large part of the Ruby ISO standard.</p>
+			<p>That project is, relatively, updated and compatible with a large part of the Ruby ISO standard. So it is your best bet unless you want to set up Emscripetn/LLVM on your own.</p>
 
 			<p>You can look at that code under the <code>webruby</code> directory.</p>
 
@@ -71,6 +71,14 @@
 			<p>What do I mean? Well it uses Javascripts data types to it's using <code>Boolean</code> instead of <code>TrueClass</code>/<code>FalseClass</code> and throws around a bit of <code>null</code> and <code>undefined</code> at times.</p>
 
 			<p>That said it's close enough and probably easier to live with in a mixed Ruby/Javascript project, like most are bound to be.</p>
+
+			<aside class="edit">
+
+				<p>Opal has matured a lot since I originally wrote this exploration. If I was going to do a ruby in the browser project today I would definatly use Opal over the LLVM/Emscripten ports of real ruby.</p>
+
+				<p>The community is vibrant and there are a lot of libraries and frameworks to use Opal in a professional manner. Go have a look at it if you are at all interested, which I assume you are since you read this far :)</p>
+
+			</aside>
 
 			<h2>The proof is in the eating</h2>
 
